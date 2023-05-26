@@ -2,70 +2,63 @@
 <html>
     <head>
     <title>Web App - Simple Interest Calculator</title>
+    <!-- <script src="head.js"></script> -->
+    <script defer src="main.js"></script>
     <link rel="stylesheet" href="style.css">
     </head>
     <body>
-      <div class="maindiv">
-        <h1>Simple Interest Calculator</h1>
-          <form name="form" id="form">
-              <!------For Alert messages----->
-              <div class="msg">
-
-              </div>
-              <fieldset id="formGroup1">
-                <legend>
-                  Simple Interest Calculator
-                </legend>
-                <div class="formField">
-                    <label for="amount">Amount</label> 
-                        <input type="number" name="principal"  id="principal" class="resultStr"  min="1" max="1000000000" step="1" value="100" required>
-                </div>  
+        <div class="maindiv">
         
-                <!--Must use oninput instead of onchange here because onchange won't trigger the slider's value changes in the Chrome Browser-->
-                  
+        <h1>Simple Interest Calculator</h1>
+        <form name="form" id="form">
+            <!------For Alert messages----->
+            <div class="msg"></div>
+            <fieldset id="formGroup1">
+                <legend>Simple Interest Calculator</legend>
+                    <div class="formField">
+                        <label for="amount">Amount</label> 
+                            <input type="number" name="principal"  id="principal" class="resultStr"  min="1" max="1000000000" step="1" value="100" required></div>  
+            
+                    <!--Must use oninput instead of onchange here because onchange won't trigger the slider's value changes in the Chrome Browser-->
+                    
+                    <div class="formField">
+                        <label for="interestRate">Interest Rate</label>  
+                        <input type="range" name="rate" id="rate" class="resultStr" min="1" max="20" step="0.25" value="10.25" oninput="updateRate(this.value)"><span id="rate_val">
+                    10.25%</span>
+                    </div>  
+
+                    <div class="formField">
+                        <label for="years">No. of Years</label> 
+                            <select name="years"  id="years" class="resultStr">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                    </div>
+                        
                 <div class="formField">
-                  <label for="interestRate">Interest Rate</label>  
-                  <input type="range" name="rate" id="rate" class="resultStr" min="1" max="20" step="0.25" value="10.25" oninput="updateRate(this.value)">
-                    <span id="rate_val">
-                    10.25%
-                    </span>
+                    <label for="interest">Interest : </label>
+                    <span name="interest" id="interest" class="resultStr" onchange="compute(interest)">$0</span>
                 </div>
-                <div class="formField">
-                  <label for="years">
-                    No. of Years
-                  </label> 
-                  <select name="years"  id="years" class="resultStr">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                  </select>
-                </div>
-                <div class="formField">
-                  <label for="interest">Interest : </label>
-                  <span name="interest" id="interest" class="resultStr">$0</span>
-                </div>
+
                 <div>
-                  <label for="compute">
-                    <button type="submit" name="compute"  id="btn"> Compute Interest </button>
-                  </label>
-                  <p name="result"  id="result" class="formField">
-                    Click 'Compute Interest' to see your results!
-                  </p>
+                    <label for="compute">
+                        <button type="submit" name="button"  id="btn" onclick="compute()" onclick="onSubmit()"> Compute Interest </button>
+                    </label>
+                    <p name="result"  id="result" class="formField displayResult">Click 'Compute Interest' to see your results!</p>
                 </div>
-              </fieldset>
-          </form>
-      <footer>
-        &#169; Everybody Can Get Rich
-      </footer>
+ 
+        </fieldset>
+    </form>
+    <footer>&#169; Everybody Can Get Rich</footer>
     </div>
-    <script src="main.js"></script>
-    <script src="testing_event-listeners"></script>
-  </body>
+    <!-- <script src="body.js"></script> -->
+    </body>
 </html>
