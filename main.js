@@ -14,16 +14,24 @@ function main() {
   updateRate();
   compute();
   onSubmit();
+  displayResult();
 }
 
-function onSubmit(e) {
-    e.preventDefault();
+function onSubmit(principal, e) {
+    if(!principal === '') {
+        return;
+        } else {
+            e.preventDefault();
+            alert('Enter a positive number');
+        }
+}
 
+function displayResult() {
     result.innerHTML = resultStr;
     
     setTimeout(() => result.innerHTML = '', 5000);
-  
-    }
+}
+    
 
 // Computes the interest, changes the value in the 'Interest' output field, 
 function compute()
@@ -50,3 +58,5 @@ function updateRate() {
     let rateVal = document.getElementById('rate').value; 
     document.getElementById('rate_val').innerHTML= `${rateVal}%`;
 }
+
+main();
