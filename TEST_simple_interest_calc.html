@@ -15,8 +15,10 @@
                 <legend>Simple Interest Calculator</legend>
                     <div class="formField">
                         <label for="amount">Amount</label> 
-                            <input type="number" name="principal"  id="principal" class="resultStr"  min="1" max="1000000000" step="1" value="100" required></div>  
-            
+                            <input type="number" name="principal"  id="principal" class="resultStr"  min="1" max="1000000000" step="1" value="100" required>
+                            <span class="error" aria-live="polite">
+                            </span>
+                    </div>            
                     <!--Must use oninput instead of onchange here because onchange won't trigger the slider's value changes in the Chrome Browser-->
                     
                     <div class="formField">
