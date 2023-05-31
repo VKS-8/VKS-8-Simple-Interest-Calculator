@@ -15,9 +15,10 @@ let displayResults = document.querySelector('#result');
 let resultStr;
 //  console.log('Var resultStr: ' + resultStr);
 
+
 let isValid = true;
 
-document.querySelector('#principal').focus();
+setFocusOnPrincipal()
 
 // Submit form event
 submitBtn.addEventListener('click', compute);
@@ -52,7 +53,7 @@ function compute() {
     console.log('validation() ran');
 
     if (!isValid) {
-      document.querySelector('#principal').focus();
+      setFocusOnPrincipal();
         return;
     }
     
@@ -70,9 +71,10 @@ function compute() {
             // console.log('Var resultStr: ' + resultStr);
     results();
     // console.log('results() ran');
-    // getForm.reset(); // Resets the form; but doesn't reset the range slider
+    // Resets the form inputs, slider position, and focus
     setTimeout(() => getForm.reset(), 5000);
     setTimeout(() => resetRangeSlider(), 5000);
+    setFocusOnPrincipal();
 }
  
 // // Validate input
@@ -136,4 +138,9 @@ function resetRangeSlider() {
     // document.querySelector('#rate_val').innerHTML = '10.25%';  For some reason this doesn't work here but it does in the results() function
     });
     // console.log('setTimeout complete');
+}
+
+// Set focus on prinicpal input field
+function setFocusOnPrincipal() {
+  document.querySelector('#principal').focus();
 }
