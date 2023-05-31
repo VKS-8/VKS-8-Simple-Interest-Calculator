@@ -17,6 +17,8 @@ let resultStr;
 
 let isValid = true;
 
+document.querySelector('#principal').focus();
+
 // Submit form event
 submitBtn.addEventListener('click', compute);
 // console.log(submitBtn);
@@ -50,6 +52,7 @@ function compute() {
     console.log('validation() ran');
 
     if (!isValid) {
+      document.querySelector('#principal').focus();
         return;
     }
     
