@@ -21,3 +21,6 @@ My deviations from requirements:
 
 1.  Changed background color of principal input field to light red with red border while invalid;
     added a "required  " placeholder to focus user on entering a valid value
+    
+2.  Worked on project in my own Visual Studio Code and local machine.  Here is the link to repo
+    that I pushed to this repo:  https://github.com/VKS-8/VKS-8-Simple-Interest-Calculator.git
